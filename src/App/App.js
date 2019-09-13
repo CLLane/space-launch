@@ -3,8 +3,10 @@ import { Component } from "react";
 import { getLaunchSchedule, monthLaunchSchedule } from "../apiCalls/apiCalls";
 import { ScheduleContainer } from "../ScheduleContainer/ScheduleContainer";
 import { LandingContainer } from "../LandingContainer/LandingContainer";
+import { RocketTypeContainer } from "../RocketTypeContainer/RocketTypeContainer";
 import { Route, NavLink } from "react-router-dom";
 import "./App.css";
+import { CompanyContainer } from "../CompanyContainer/CompanyContainer";
 
 class App extends Component {
   constructor() {
@@ -56,12 +58,21 @@ class App extends Component {
         </nav>
         <main>
           <aside>
+            <NavLink exact to="/">
+              Home
+            </NavLink>
             <NavLink exact to="/Schedule">
               Schedule
             </NavLink>
-            <NavLink exact to='/RocketTypes'>Rocket Types</NavLink>
-            <NavLink exact to="/Companies">Companies</NavLink>
-            <NavLink exact to='/Missions'>Missions</NavLink>
+            <NavLink exact to="/RocketTypes">
+              Rocket Types
+            </NavLink>
+            <NavLink exact to="/Companies">
+              Companies
+            </NavLink>
+            <NavLink exact to="/Missions">
+              Missions
+            </NavLink>
           </aside>
           <section>
             {this.state.launches && (
@@ -80,6 +91,17 @@ class App extends Component {
                 )}
               />
             )}
+            <Route
+              exact
+              path="/RocketTypes"
+              render={() => <RocketTypeContainer />}
+            />
+            <Route
+              exact
+              path="/Companies"
+              render={() => 
+                <CompanyContainer />} 
+            />
           </section>
         </main>
       </div>
