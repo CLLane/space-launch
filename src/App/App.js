@@ -3,6 +3,7 @@ import { Component } from "react";
 import { getLaunchSchedule, monthLaunchSchedule } from "../apiCalls/apiCalls";
 import { ScheduleContainer } from "../ScheduleContainer/ScheduleContainer";
 import { LandingContainer } from "../LandingContainer/LandingContainer";
+import { RocketTypeContainer } from '../RocketTypeContainer/RocketTypeContainer'
 import { Route, NavLink } from "react-router-dom";
 import "./App.css";
 
@@ -79,7 +80,10 @@ class App extends Component {
                   <ScheduleContainer launch={this.state.calendar} />
                 )}
               />
-            )}
+              )}
+              <Route
+                exact path='/RocketTypes'
+                render={() => <RocketTypeContainer />}/>
           </section>
         </main>
       </div>
