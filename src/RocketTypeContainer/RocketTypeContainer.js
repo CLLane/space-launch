@@ -20,7 +20,6 @@ export class RocketTypeContainer extends Component {
   render(){
     return(
       <>
-        {/* <input type='text'></input> */}
         {this.state.rocketType}
       </>
     )
