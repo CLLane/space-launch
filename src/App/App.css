@@ -1,0 +1,28 @@
+nav {
+  height: 15vh;
+}
+
+main { 
+  display: flex;
+}
+aside {
+  display: flex;
+  flex-direction: column;
+  width: 15%;
+}
+section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  overflow: hidden;
+  width: 85%;
+}
+
+article {
+  min-width: 30vw;
+  min-height: 50vh;
+  margin-bottom: 27px;
+  text-overflow: clip;
+  background-color: rgb(0, 0, 255, .5);
+  border: 2px black solid;
+}
