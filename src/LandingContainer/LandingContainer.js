@@ -1,8 +1,9 @@
 import React from 'react';
 import { Cards } from '../Cards/Cards';
+import { connect } from "react-redux";
 
-export const LandingContainer = ({ launch }) => {
-  let landing = launch.map(launch => <Cards launch={launch} />)
+const LandingContainer = ({ nextLaunch }) => {
+  let landing = nextLaunch.map(launch => <Cards launch={launch} />)
 
   return (
     <>
@@ -10,3 +11,9 @@ export const LandingContainer = ({ launch }) => {
     </>
   )
 }
+
+const mapStateToProps = ({ nextLaunch }) => ({
+nextLaunch
+})
+
+export default connect(mapStateToProps)(LandingContainer)

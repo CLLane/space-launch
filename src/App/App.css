@@ -1,5 +1,5 @@
 nav {
-  height: 15vh;
+  height: 10vh;
 }
 
 main { 
@@ -12,17 +12,15 @@ aside {
 }
 section {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  overflow: hidden;
+  overflow-x: scroll;
   width: 85%;
 }
 
 article {
-  min-width: 30vw;
-  min-height: 50vh;
-  margin-bottom: 27px;
-  text-overflow: clip;
+  min-width: 50vw;
+  min-height: 20vh;
+  margin: 10px;
   background-color: rgb(0, 0, 255, .5);
   border: 2px black solid;
+  border-radius: 8px;
 }

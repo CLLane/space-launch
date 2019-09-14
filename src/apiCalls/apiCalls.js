@@ -39,3 +39,13 @@ export const getCompanies = async () => {
     throw new Error('Failed to retrieve Companies')
   }
 }
+
+export const getMissions = async () => {
+  try {
+    const response = await fetch('https://launchlibrary.net/1.3/mission')
+    const data = await response.json();
+    return data.missions;
+  } catch (error) {
+    throw new Error('Failed to retrieve Missions')
+  }
+}
