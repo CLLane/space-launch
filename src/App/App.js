@@ -4,7 +4,6 @@ import { getLaunchSchedule, monthLaunchSchedule } from "../apiCalls/apiCalls";
 import ScheduleContainer from "../ScheduleContainer/ScheduleContainer";
 import  LandingContainer from "../LandingContainer/LandingContainer";
 import RocketTypeContainer from "../RocketTypeContainer/RocketTypeContainer";
-import { Favorites } from "../Favorites/FavoritesContainer";
 import { Route, NavLink } from "react-router-dom";
 import "./App.css";
 import CompanyContainer from "../CompanyContainer/CompanyContainer";
@@ -15,7 +14,7 @@ import { monthLaunchData } from "../actions/index";
 import Nav from "../Nav/nav";
 import SearchContainer from "../SearchContainer/searchContainer";
 
-class App extends Component {
+export class App extends Component {
 
   async componentDidMount() {
     let launches = await getLaunchSchedule(1);
@@ -51,29 +50,26 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <body>
         <nav>
           <Nav />
-          <NavLink exact to="/">
-            Home
-          </NavLink>
         </nav>
         <main>
           <aside>
-            <NavLink exact to="/Schedule">
+            <NavLink className='nav-link' exact to="/">
+              Home
+            </NavLink>
+            <NavLink className='nav-link' exact to="/Schedule">
               Schedule
             </NavLink>
-            <NavLink exact to="/RocketTypes">
+            <NavLink className='nav-link' exact to="/RocketTypes">
               Rocket Types
             </NavLink>
-            <NavLink exact to="/Companies">
+            <NavLink className='nav-link' exact to="/Companies">
               Companies
             </NavLink>
-            <NavLink exact to="/Missions">
+            <NavLink className='nav-link' exact to="/Missions">
               Missions
-            </NavLink>
-            <NavLink exact to ="/Favorites">
-              Favorites
             </NavLink>
           </aside>
           <section>
@@ -104,11 +100,6 @@ class App extends Component {
               render={() => 
                 <CompanyContainer />} 
             />
-            <Route
-              exact
-              path="/Favorites"
-              render={() => 
-                <Favorites />} />
             <Route 
               exact
               path='/Missions'
@@ -119,7 +110,7 @@ class App extends Component {
               render={() => <SearchContainer />}/>
           </section>
         </main>
-      </div>
+      </body>
     );
   }
 }

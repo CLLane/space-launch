@@ -6,9 +6,9 @@ const LandingContainer = ({ nextLaunch }) => {
   let landing = nextLaunch.map(launch => <Cards launch={launch} />)
 
   return (
-    <>
+    <div className='landing-container'>
       {landing}
-    </>
+    </div>
   )
 }
 

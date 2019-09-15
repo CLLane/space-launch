@@ -21,18 +21,10 @@ export const Cards = ({ launch }) => {
       <div>
         <p>{pad.name}</p>
         <a href={pad.mapURL}>Launch Pad Location</a>
-        <p>{pad.latitude}</p>
-        <p>{pad.longitude}</p>
         <div>{pad.agencies && pad.agencies.map(agency =>
           <div>
-            <a href={agency.wikiURL}>{agency.name}</a>
             <p>{agency.abbrev}</p>
             <p>{agency.countryCode}</p>
-            <div>{agency.infoURLs.map(url =>
-              <div>
-                <a href={url} >Link</a>
-              </div>
-            )}</div>
           </div>
         )}</div>
       </div>

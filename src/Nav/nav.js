@@ -4,6 +4,7 @@ import { getSearchResults } from "../apiCalls/apiCalls";
 import { getSearchData } from "../actions/index";
 import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
+import Logo from '../Images/logo.svg'
 
 class Nav extends Component {
   constructor() {
@@ -28,63 +29,79 @@ class Nav extends Component {
   };
 
   render() {
+    console.log('this.state', this.state)
     return (
       <>
-        <div>
-          <label>Launches</label>
-          <input
-            type="radio"
-            name="condition"
-            value="launch/"
-            onClick={this.handleCondition}
-          ></input>
-          <label>Company</label>
-          <input
-            type="radio"
-            name="condition"
-            value="agency?name="
-            onClick={this.handleCondition}
-          ></input>
-          <label>Rockets</label>
-          <input
-            type="radio"
-            name="condition"
-            value="rocket/"
-            onClick={this.handleCondition}
-          ></input>
-          <label>Missions</label>
-          <input
-            type="radio"
-            name="condition"
-            value="mission?name="
-            onClick={this.handleCondition}
-          ></input>
+      <div className='image-container'>
+       <img className='logo' alt='' src={Logo}></img>
+      <p>Launch Log</p>
+      </div>
+      <form>
+
+        <div className='radio-group'>
+          {/* <label>Launches</label> */}
+          <div className='radio'>
+            <input
+              type="radio"
+              name="condition"
+              value="launch/"
+              onClick={this.handleCondition}>
+            </input>
+            Launch</div>
+          <div className='radio'>
+            <input
+              className='radio'
+              type="radio"
+              name="condition"
+              value="agency?name="
+              onClick={this.handleCondition}>
+            </input>
+            Company</div>
+          <div className='radio'>
+            <input
+              className='radio'
+              type="radio"
+              name="condition"
+              value="rocket/"
+              onClick={this.handleCondition}>
+            </input>
+            Rocket</div>
+          <div className='radio'>
+            <input
+              className='radio'
+              type="radio"
+              name="condition"
+              value="mission?name="
+              onClick={this.handleCondition}>
+            </input>
+            Missions</div>
         </div>
-        <input
-          type="text"
-          value={this.state.search}
-          onChange={this.handleChange}
-        ></input>
-        {!this.state.search && !this.state.condition && (
-          <button disabled>Search</button>
-        )}
-        {this.state.search && !this.state.condition && (
-          <button disabled>Search</button>
-        )}
-        {!this.state.search && this.state.condition && (
-          <button disabled>Search</button>
-        )}
-        {this.state.search && this.state.condition && (
-          <NavLink to="/Search">
-            <button
-              onClick={() =>
-                this.fetchSearchResults(this.state.condition, this.state.search)
-              }
-            >
-              Search
-            </button>
-          </NavLink>
-        )}
+        <div className='search-container'>
+          <input
+            type="text"
+            value={this.state.search}
+            onChange={this.handleChange}
+          ></input>
+          {!this.state.search && !this.state.condition && (
+            <button disabled>Search</button>
+          )}
+          {this.state.search && !this.state.condition && (
+            <button disabled>Search</button>
+          )}
+          {!this.state.search && this.state.condition && (
+            <button disabled>Search</button>
+          )}
+          {this.state.search && this.state.condition && (
+            <NavLink className='active-button' to="/Search"
+                onClick={() =>
+                  this.fetchSearchResults(this.state.condition, this.state.search)
+                }
+              >
+                Search
+            </NavLink>
+          )}
+        </div>
+      </form>
       </>
     );
   }

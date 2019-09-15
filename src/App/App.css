@@ -1,26 +1,149 @@
 nav {
-  height: 10vh;
+  height: 20vh;
+  color: white;
+  background-color: rgb(0, 0, 0, .95);
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+input {
+  height: 20px;
+  width: 75%;
+  border-radius: 8px;
+  border: none;
 }
 
 main { 
   display: flex;
+  background-color: rgb(0, 0, 0, .95);
+  min-height: 100vh;
 }
 aside {
   display: flex;
   flex-direction: column;
-  width: 15%;
+  width: 20%;
+  max-height: 50vh;
+  border-radius: 10px;
+  justify-content: space-around;
+  padding-left: 15px;
+  padding-right: 15px;
+
 }
+.nav-link {
+  color: white;
+  text-decoration: none;
+  border: 2px solid white;
+  height: 30px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.nav-link:hover{
+  color: black;
+  background-color: white;
+}
+
 section {
   display: flex;
   overflow-x: scroll;
-  width: 85%;
+  width: 80%;
+}
+
+.landing-container {
+  display: flex;
+  overflow-x: scroll;
+  width: 100%;
+  justify-content: center;
 }
 
 article {
   min-width: 50vw;
-  min-height: 20vh;
+  min-height: 90vh;
   margin: 10px;
-  background-color: rgb(0, 0, 255, .5);
+  background-color:rgb(13, 60, 142, .65);
   border: 2px black solid;
   border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+
+article:hover, .radio:hover{
+  border: 2px red solid;
+}
+
+div {
+  text-align: center;
+}
+
+.rocket-images {
+  height: 500px;
+  width: 500px;
+  border-radius: 8px;
+
+}
+
+.radio-group {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 10px;
+  width: 35%;
+}
+
+
+.radio{
+    display:flex;
+    width: 100px;
+    height: 30px;
+    border-radius: 8px;
+    background-color:rgb(13, 60, 142, .65);
+    border: 2px solid rgb(13, 60, 142, .65);
+    cursor:pointer;
+    justify-content: center;
+    align-items: center;
+    padding-right: 10px
+}
+
+.search-container {
+  display: flex;
+  flex-direction: column;
+  width: 33%;
+  align-items: center;
+}
+
+button, .active-button {
+  margin-top: 5px;
+  width: 33%;
+  height: 25px;
+  border-radius: 8px;
+  border: 2px solid white;
+  background-color: black;
+  color: white;
+  text-decoration: none;
+}
+
+.active-button:hover {
+  background-color: white;
+  color: black;
+}
+
+.image-container {
+  height: 100px;
+  width: 100px;
+  display: flex;
+}
+/* .logo {
+  align-self: baseline;
+} */
+
+form {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
 }
