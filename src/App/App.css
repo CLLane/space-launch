@@ -74,7 +74,7 @@ article {
 }
 
 article:hover, .radio:hover{
-  border: 2px red solid;
+  border: 2.1px rgba(252, 2, 2, 0.65) solid;
 }
 
 div {
