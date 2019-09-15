@@ -24,7 +24,7 @@ class RocketTypeContainer extends Component {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  rocketTypeData: (rocket) => dispatch(rocketTypeData(rocket))
+  rocketTypeData: (rockets) => dispatch(rocketTypeData(rockets))
 })
 
 const mapStateToProps = ({ rockets }) => ({

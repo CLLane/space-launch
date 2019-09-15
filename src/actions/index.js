@@ -22,3 +22,8 @@ export const getCompanyData = (companies) => ({
   type: 'COMPANY_DATA',
   companies
 })
+
+export const getSearchData = (search) => ({
+  type: 'SEARCH_RESULTS',
+  search
+})

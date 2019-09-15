@@ -12,6 +12,8 @@ import MissionsContainer from "../MissionsContainer/MissionsContainer";
 import { connect } from "react-redux";
 import { nextLaunchData } from "../actions/index";
 import { monthLaunchData } from "../actions/index";
+import Nav from "../Nav/nav";
+import SearchContainer from "../SearchContainer/searchContainer";
 
 class App extends Component {
 
@@ -51,11 +53,10 @@ class App extends Component {
     return (
       <div className="App">
         <nav>
-          <button>Search</button>
-          <input type="text"></input>
-            <NavLink exact to="/">
-              Home
-            </NavLink>
+          <Nav />
+          <NavLink exact to="/">
+            Home
+          </NavLink>
         </nav>
         <main>
           <aside>
@@ -112,6 +113,10 @@ class App extends Component {
               exact
               path='/Missions'
               render={() => <MissionsContainer />}/>
+            <Route 
+              exact
+              path='/Search'
+              render={() => <SearchContainer />}/>
           </section>
         </main>
       </div>
