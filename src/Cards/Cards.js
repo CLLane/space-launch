@@ -19,11 +19,13 @@ export const Cards = ({ launch }) => {
     {launch.vidURLs  && <ReactPlayer url={urlString}/>}
     <div>{launch.location.pads.map(pad =>
       <div>
+        <h3>Launch Pad:</h3>
         <p>{pad.name}</p>
-        <a href={pad.mapURL}>Launch Pad Location</a>
         <div>{pad.agencies && pad.agencies.map(agency =>
           <div>
+            <h3>Pad Company:</h3> 
             <p>{agency.abbrev}</p>
+            <h3>Pad Country:</h3> 
             <p>{agency.countryCode}</p>
           </div>
         )}</div>
