@@ -1,8 +1,9 @@
 import React from 'react';
 import { Cards } from '../Cards/Cards';
+import { connect } from 'react-redux';
 
-export const ScheduleContainer = ({ launch }) => {
-  let calendar = launch.map(launch => <Cards launch={launch} />)
+const ScheduleContainer = ({ monthLaunch }) => {
+  let calendar = monthLaunch.map(launch => <Cards launch={launch} />)
 
   return (
       <>
@@ -10,3 +11,9 @@ export const ScheduleContainer = ({ launch }) => {
       </>
   )
 }
+
+const mapStateToProps = ({ monthLaunch }) => ({
+  monthLaunch
+})
+
+export default connect(mapStateToProps)(ScheduleContainer)

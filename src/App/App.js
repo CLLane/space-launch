@@ -1,30 +1,29 @@
 import React from "react";
 import { Component } from "react";
 import { getLaunchSchedule, monthLaunchSchedule } from "../apiCalls/apiCalls";
-import { ScheduleContainer } from "../ScheduleContainer/ScheduleContainer";
-import { LandingContainer } from "../LandingContainer/LandingContainer";
-import { RocketTypeContainer } from "../RocketTypeContainer/RocketTypeContainer";
+import ScheduleContainer from "../ScheduleContainer/ScheduleContainer";
+import  LandingContainer from "../LandingContainer/LandingContainer";
+import RocketTypeContainer from "../RocketTypeContainer/RocketTypeContainer";
 import { Route, NavLink } from "react-router-dom";
 import "./App.css";
-import { CompanyContainer } from "../CompanyContainer/CompanyContainer";
+import CompanyContainer from "../CompanyContainer/CompanyContainer";
+import MissionsContainer from "../MissionsContainer/MissionsContainer";
+import { connect } from "react-redux";
+import { nextLaunchData } from "../actions/index";
+import { monthLaunchData } from "../actions/index";
+import Nav from "../Nav/nav";
+import SearchContainer from "../SearchContainer/searchContainer";
 
-class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      calendar: "",
-      launches: ""
-    };
-  }
+export class App extends Component {
 
   async componentDidMount() {
     let launches = await getLaunchSchedule(1);
-    this.setState({ launches: launches });
+    this.props.nextLaunchData(launches);
 
     let monthStart = await this.formatMonthStart();
     let monthEnd = await this.formatMonthEnd();
     let month = await monthLaunchSchedule(monthStart, monthEnd);
-    this.setState({ calendar: month });
+    this.props.monthLaunchData(month);
   }
 
   formatMonthStart = () => {
@@ -51,43 +50,42 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <body>
         <nav>
-          <button>Search</button>
-          <input type="text"></input>
+          <Nav />
         </nav>
         <main>
           <aside>
-            <NavLink exact to="/">
+            <NavLink className='nav-link' exact to="/">
               Home
             </NavLink>
-            <NavLink exact to="/Schedule">
+            <NavLink className='nav-link' exact to="/Schedule">
               Schedule
             </NavLink>
-            <NavLink exact to="/RocketTypes">
+            <NavLink className='nav-link' exact to="/RocketTypes">
               Rocket Types
             </NavLink>
-            <NavLink exact to="/Companies">
+            <NavLink className='nav-link' exact to="/Companies">
               Companies
             </NavLink>
-            <NavLink exact to="/Missions">
+            <NavLink className='nav-link' exact to="/Missions">
               Missions
             </NavLink>
           </aside>
           <section>
-            {this.state.launches && (
+            {this.props.nextLaunch && (
               <Route
                 exact
                 path="/"
-                render={() => <LandingContainer launch={this.state.launches} />}
+                render={() => <LandingContainer />}
               />
             )}
-            {this.state.calendar && (
+            {this.props.monthLaunch && (
               <Route
                 exact
                 path="/Schedule"
                 render={() => (
-                  <ScheduleContainer launch={this.state.calendar} />
+                  <ScheduleContainer />
                 )}
               />
             )}
@@ -102,11 +100,30 @@ class App extends Component {
               render={() => 
                 <CompanyContainer />} 
             />
+            <Route 
+              exact
+              path='/Missions'
+              render={() => <MissionsContainer />}/>
+            <Route 
+              exact
+              path='/Search'
+              render={() => <SearchContainer />}/>
           </section>
         </main>
-      </div>
+      </body>
     );
   }
 }
 
-export default App;
+const mapDispatchToProps = (dispatch) => ({
+  nextLaunchData: (nextLaunch) => dispatch(nextLaunchData(nextLaunch)),
+  monthLaunchData: (monthLaunch) => dispatch(monthLaunchData(monthLaunch))
+})
+
+const mapStateToProps = ({ nextLaunch, monthLaunch }) => ({
+  nextLaunch,
+  monthLaunch
+})
+
+
+export default connect (mapStateToProps, mapDispatchToProps) (App);

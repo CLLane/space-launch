@@ -22,9 +22,9 @@ export const monthLaunchSchedule = async (start, end) => {
 
 export const getRocketTypes = async () => {
   try {
-    const response = await fetch('https://launchlibrary.net/1.3/rocketfamily/');
+    const response = await fetch('https://launchlibrary.net/1.3/rocket/');
     const data = await response.json();
-    return data.RocketFamilies
+    return data.rockets
   } catch (error) {
     throw new Error('Failed to retrieve Rocket Types')
   }
@@ -37,5 +37,43 @@ export const getCompanies = async () => {
     return data.agencies
   } catch (error) {
     throw new Error('Failed to retrieve Companies')
+  }
+}
+
+export const getMissions = async () => {
+  try {
+    const response = await fetch('https://launchlibrary.net/1.3/mission')
+    const data = await response.json();
+    return data.missions;
+  } catch (error) {
+    throw new Error('Failed to retrieve Missions')
+  }
+}
+
+export const getSearchResults = async (condition, searchValue) => {
+  console.log('condition :', condition);
+  console.log('searchValue :', searchValue);
+  try {
+    const response = await fetch(`https://launchlibrary.net/1.3/${condition}${searchValue}`)
+    console.log('response :', response);
+    const data = await response.json();
+    let dataType;
+    if(condition === 'launch/') {
+      console.log()
+      dataType = 'launches'
+    }
+    if(condition === 'rocket/') {
+      dataType = 'rockets'
+    }
+    if (condition === 'mission?name=') {
+      dataType = 'missions'
+    }
+    if(condition === 'agency?name=') {
+      dataType = 'agencies'
+    }
+    console.log('data[dataType] :', data[dataType]);
+    return data[dataType]
+  } catch (error) {
+    throw new Error('Failed to retrieve results')
   }
 }
