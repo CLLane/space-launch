@@ -147,3 +147,25 @@ form {
   flex-direction: column;
   align-items: center;
 }
+
+.card-container {
+  display: flex;
+  justify-content: center;
+}
+
+.country-container {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+}
+
+.wiki-link, .info-link {
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 800;
+  color: white;
+}
+
+.wiki-link:hover, .info-link:hover {
+  color: rgba(252, 2, 2, 0.65);
+}

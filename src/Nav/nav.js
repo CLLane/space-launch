@@ -6,7 +6,7 @@ import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
 import Logo from '../Images/logo.svg'
 
-class Nav extends Component {
+export class Nav extends Component {
   constructor() {
     super();
     this.state = {
@@ -25,11 +25,10 @@ class Nav extends Component {
 
   fetchSearchResults = async (condition, search) => {
     let searchFetch = await getSearchResults(condition, search);
-    await this.props.getSearchData(searchFetch);
+    this.props.getSearchData(searchFetch);
   };
 
   render() {
-    console.log('this.state', this.state)
     return (
       <>
       <div className='image-container'>
@@ -39,7 +38,6 @@ class Nav extends Component {
       <form>
 
         <div className='radio-group'>
-          {/* <label>Launches</label> */}
           <div className='radio'>
             <input
               type="radio"
@@ -107,11 +105,11 @@ class Nav extends Component {
   }
 }
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   getSearchData: search => dispatch(getSearchData(search))
 });
 
-const mapStateToProps = ({ search }) => ({
+export const mapStateToProps = ({ search }) => ({
   search
 });
 

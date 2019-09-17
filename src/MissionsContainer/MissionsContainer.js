@@ -5,7 +5,7 @@ import { MissionCard } from '../Cards/MissionCards';
 import { connect } from 'react-redux';
 import { getMissionData } from '../actions';
 
-class MissionsContainer extends Component {
+export class MissionsContainer extends Component {
 
   async componentDidMount() {
     let missionType = await getMissions();
@@ -13,7 +13,7 @@ class MissionsContainer extends Component {
   }
   
   render() {
-    let missions = this.props.missions.map(mission => <MissionCard mission={mission} />)
+    let missions = this.props.missions.map(mission => <MissionCard mission={mission} key={mission.id} />)
     return (
       <>
         {missions}
@@ -22,11 +22,11 @@ class MissionsContainer extends Component {
   }
 }
 
-const mapDispatchToProps = (dispatch) => ({
+export const mapDispatchToProps = (dispatch) => ({
   getMissionData: (missions) => dispatch(getMissionData(missions))
 })
 
-const mapStateToProps = ({ missions }) => ({
+export const mapStateToProps = ({ missions }) => ({
   missions
 })
 

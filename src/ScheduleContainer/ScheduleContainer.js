@@ -2,8 +2,8 @@ import React from 'react';
 import { Cards } from '../Cards/Cards';
 import { connect } from 'react-redux';
 
-const ScheduleContainer = ({ monthLaunch }) => {
-  let calendar = monthLaunch.map(launch => <Cards launch={launch} />)
+export const ScheduleContainer = ({ monthLaunch }) => {
+  let calendar = monthLaunch.map(launch => <Cards launch={launch} key={launch.id}/>)
 
   return (
       <>
@@ -12,7 +12,7 @@ const ScheduleContainer = ({ monthLaunch }) => {
   )
 }
 
-const mapStateToProps = ({ monthLaunch }) => ({
+export const mapStateToProps = ({ monthLaunch }) => ({
   monthLaunch
 })
 

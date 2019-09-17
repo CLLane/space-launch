@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LandingContainer should match a snapshot 1`] = `
+<div
+  className="landing-container"
+>
+  <Cards
+    key="Chris"
+    launch={
+      Object {
+        "id": 1,
+        "name": "Chris",
+      }
+    }
+  />
+</div>
+`;

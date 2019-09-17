@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App should match a snapshot 1`] = `
+<body>
+  <nav>
+    <Connect(Nav) />
+  </nav>
+  <main>
+    <aside>
+      <NavLink
+        className="nav-link"
+        exact={true}
+        to="/"
+      >
+        Home
+      </NavLink>
+      <NavLink
+        className="nav-link"
+        exact={true}
+        to="/Schedule"
+      >
+        Schedule
+      </NavLink>
+      <NavLink
+        className="nav-link"
+        exact={true}
+        to="/RocketTypes"
+      >
+        Rocket Types
+      </NavLink>
+      <NavLink
+        className="nav-link"
+        exact={true}
+        to="/Companies"
+      >
+        Companies
+      </NavLink>
+      <NavLink
+        className="nav-link"
+        exact={true}
+        to="/Missions"
+      >
+        Missions
+      </NavLink>
+    </aside>
+    <section>
+      <Route
+        exact={true}
+        path="/"
+        render={[Function]}
+      />
+      <Route
+        exact={true}
+        path="/Schedule"
+        render={[Function]}
+      />
+      <Route
+        exact={true}
+        path="/RocketTypes"
+        render={[Function]}
+      />
+      <Route
+        exact={true}
+        path="/Companies"
+        render={[Function]}
+      />
+      <Route
+        exact={true}
+        path="/Missions"
+        render={[Function]}
+      />
+      <Route
+        exact={true}
+        path="/Search"
+        render={[Function]}
+      />
+    </section>
+  </main>
+</body>
+`;

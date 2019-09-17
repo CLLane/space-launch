@@ -5,15 +5,7 @@ import { getCompanies } from "../apiCalls/apiCalls";
 import { getCompanyData } from '../actions';
 import { connect } from 'react-redux';
 
-class CompanyContainer extends Component {
-  // constructor() {
-  //   super();
-  //   this.state = {
-  //     companies: ''
-  //   }
-  // }
-
-
+export class CompanyContainer extends Component {
 
 async componentDidMount() {
   let companyFetch = await getCompanies();
@@ -23,7 +15,8 @@ async componentDidMount() {
 
 
 render() {
-  let companies = this.props.companies.map(company => <CompanyCards company={company} />)
+  let companies = this.props.companies.map(company => 
+  <CompanyCards company={company} key={company.name}/>)
   return (
     <>
       {companies}
@@ -32,11 +25,11 @@ render() {
 }
 }
 
-const mapDispatchToProps = (dispatch) => ({
+export const mapDispatchToProps = (dispatch) => ({
   getCompanyData:  (companies) => dispatch(getCompanyData(companies))
 })
 
-const mapStateToProps = ({ companies }) => ({
+export const mapStateToProps = ({ companies }) => ({
   companies
 })
 

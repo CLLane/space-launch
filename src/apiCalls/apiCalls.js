@@ -4,7 +4,6 @@ export const getLaunchSchedule = async (number) => {
     const data = await response.json();
     return data.launches;
   } catch (error) {
-    console.log(error.message)
     throw new Error('Failed to retrieve scheduled launches')
   }
 }
@@ -15,7 +14,6 @@ export const monthLaunchSchedule = async (start, end) => {
     const data = await response.json();
     return data.launches
   } catch (error) {
-    console.log(error.message)
     throw new Error('Failed to retrieve the months scheduled launches')
   }
 }
@@ -51,15 +49,11 @@ export const getMissions = async () => {
 }
 
 export const getSearchResults = async (condition, searchValue) => {
-  console.log('condition :', condition);
-  console.log('searchValue :', searchValue);
   try {
     const response = await fetch(`https://launchlibrary.net/1.3/${condition}${searchValue}`)
-    console.log('response :', response);
     const data = await response.json();
     let dataType;
     if(condition === 'launch/') {
-      console.log()
       dataType = 'launches'
     }
     if(condition === 'rocket/') {
@@ -71,7 +65,6 @@ export const getSearchResults = async (condition, searchValue) => {
     if(condition === 'agency?name=') {
       dataType = 'agencies'
     }
-    console.log('data[dataType] :', data[dataType]);
     return data[dataType]
   } catch (error) {
     throw new Error('Failed to retrieve results')

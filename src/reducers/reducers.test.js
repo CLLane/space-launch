@@ -13,6 +13,13 @@ describe('nextLaunch', () => {
     }
     expect(nextLaunch([], mockAction)).toEqual([{ launch: 'Space' }])
   })
+  it('should return default state if type is not recognized', () => {
+    let mockAction = {
+      type: 'This aint gonna work',
+
+    }
+    expect(nextLaunch([], mockAction)).toEqual([])
+  })
 })
 
 describe('monthLaunch', () => {
@@ -24,6 +31,12 @@ describe('monthLaunch', () => {
 
     expect(monthLaunch([], mockAction)).toEqual([{ launch: 'Space' }, { launch: 'Space' }])
   })
+   it("should return default state if type is not recognized", () => {
+     let mockAction = {
+       type: "This aint gonna work"
+     };
+     expect(monthLaunch([], mockAction)).toEqual([]);
+   });
 })
 
 describe('rockets', () => {
@@ -34,6 +47,12 @@ describe('rockets', () => {
     }
     expect(rockets([], mockAction)).toEqual([{ rocket: 'Falcon'}])
   })
+   it("should return default state if type is not recognized", () => {
+     let mockAction = {
+       type: "This aint gonna work"
+     };
+     expect(rockets([], mockAction)).toEqual([]);
+   });
 })
 
 describe('missions', () => {
@@ -44,6 +63,12 @@ describe('missions', () => {
     }
     expect(missions([], mockAction)).toEqual([{ mission: 'Apollo' }])
   })
+   it("should return default state if type is not recognized", () => {
+     let mockAction = {
+       type: "This aint gonna work"
+     };
+     expect(missions([], mockAction)).toEqual([]);
+   });
 })
 
 describe('companies', () => {
@@ -54,6 +79,12 @@ describe('companies', () => {
     }
     expect(companies([], mockAction)).toEqual([{ company: 'NASA' }])
   })
+   it("should return default state if type is not recognized", () => {
+     let mockAction = {
+       type: "This aint gonna work"
+     };
+     expect(companies([], mockAction)).toEqual([]);
+   });
 })
 
 describe('search', () => {
@@ -64,4 +95,10 @@ describe('search', () => {
     }
     expect(search([], mockAction)).toEqual([{ result: 'Exactly what you wanted' }])
   })
+   it("should return default state if type is not recognized", () => {
+     let mockAction = {
+       type: "This aint gonna work"
+     };
+     expect(search([], mockAction)).toEqual([]);
+   });
 })

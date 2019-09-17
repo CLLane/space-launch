@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MissionsCOntainer should match a snapshot 1`] = `
+<Fragment>
+  <MissionCard
+    mission={
+      Object {
+        "name": "Operation get to mod 4",
+      }
+    }
+  />
+</Fragment>
+`;
