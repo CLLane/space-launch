@@ -13,6 +13,7 @@ import { nextLaunchData } from "../actions/index";
 import { monthLaunchData } from "../actions/index";
 import Nav from "../Nav/nav";
 import SearchContainer from "../SearchContainer/searchContainer";
+import PropTypes from "prop-types";
 
 export class App extends Component {
 
@@ -127,3 +128,8 @@ export const mapStateToProps = ({ nextLaunch, monthLaunch }) => ({
 
 
 export default connect (mapStateToProps, mapDispatchToProps) (App);
+
+App.propTypes = {
+  nextLaunch: PropTypes.array.isRequired,
+  monthLaunch: PropTypes.array.isRequired
+}

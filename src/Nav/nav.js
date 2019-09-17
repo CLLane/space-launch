@@ -4,7 +4,8 @@ import { getSearchResults } from "../apiCalls/apiCalls";
 import { getSearchData } from "../actions/index";
 import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
-import Logo from '../Images/logo.svg'
+import Logo from '../Images/logo.svg';
+import PropTypes from "prop-types";
 
 export class Nav extends Component {
   constructor() {
@@ -117,3 +118,8 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(Nav);
+
+Nav.propTypes = {
+  search: PropTypes.array.isRequired,
+  getSearchData: PropTypes.func.isRequired
+}

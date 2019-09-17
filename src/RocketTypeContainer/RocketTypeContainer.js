@@ -4,6 +4,7 @@ import { getRocketTypes } from '../apiCalls/apiCalls';
 import { RocketCards } from '../Cards/RocketCards';
 import { rocketTypeData } from "../actions/index";
 import { connect } from "react-redux";
+import PropTypes from "prop-types";
 
 export class RocketTypeContainer extends Component {
 
@@ -32,3 +33,8 @@ export const mapStateToProps = ({ rockets }) => ({
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(RocketTypeContainer)
+
+RocketTypeContainer.propTypes = {
+  rockets: PropTypes.array.isRequired,
+  rocketTypeData: PropTypes.func.isRequired
+}
