@@ -13,7 +13,7 @@ export class MissionsContainer extends Component {
   }
   
   render() {
-    let missions = this.props.missions.map(mission => <MissionCard mission={mission} />)
+    let missions = this.props.missions.map(mission => <MissionCard mission={mission} key={mission.id} />)
     return (
       <>
         {missions}

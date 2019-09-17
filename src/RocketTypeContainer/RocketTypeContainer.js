@@ -14,7 +14,7 @@ export class RocketTypeContainer extends Component {
   }
   
   render(){
-    let rockets = this.props.rockets.map(rocket => <RocketCards rocket={rocket}/>)
+    let rockets = this.props.rockets.map(rocket => <RocketCards rocket={rocket} key={rocket.id}/>)
     return(
       <>
         {rockets}

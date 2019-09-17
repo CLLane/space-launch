@@ -12,6 +12,7 @@ describe('LandingContainer', () => {
   beforeEach(() => {
     wrapper = shallow(<LandingContainer 
       nextLaunch={[mockNextLaunch]}
+      key={1}
     />);
   });
   it('should match a snapshot', () => {

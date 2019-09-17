@@ -22,6 +22,7 @@ describe("CompanyContainer", () => {
         company={mockCompany}
         getCompanyData={mockGetCompanyData}
         companies={mockCompanies}
+        key={1}
       />
     );
   });

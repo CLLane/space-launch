@@ -10,6 +10,7 @@ describe('ScheduleContainer', () => {
     wrapper = shallow(
       <ScheduleContainer
         monthLaunch={mockMonthLaunch}
+        key={1}
       />
     );
   });

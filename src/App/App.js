@@ -115,12 +115,12 @@ export class App extends Component {
   }
 }
 
-const mapDispatchToProps = (dispatch) => ({
+export const mapDispatchToProps = (dispatch) => ({
   nextLaunchData: (nextLaunch) => dispatch(nextLaunchData(nextLaunch)),
   monthLaunchData: (monthLaunch) => dispatch(monthLaunchData(monthLaunch))
 })
 
-const mapStateToProps = ({ nextLaunch, monthLaunch }) => ({
+export const mapStateToProps = ({ nextLaunch, monthLaunch }) => ({
   nextLaunch,
   monthLaunch
 })

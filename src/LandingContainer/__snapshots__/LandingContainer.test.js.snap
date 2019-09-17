@@ -5,6 +5,7 @@ exports[`LandingContainer should match a snapshot 1`] = `
   className="landing-container"
 >
   <Cards
+    key="Chris"
     launch={
       Object {
         "id": 1,

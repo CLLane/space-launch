@@ -25,7 +25,7 @@ export class Nav extends Component {
 
   fetchSearchResults = async (condition, search) => {
     let searchFetch = await getSearchResults(condition, search);
-    await this.props.getSearchData(searchFetch);
+    this.props.getSearchData(searchFetch);
   };
 
   render() {

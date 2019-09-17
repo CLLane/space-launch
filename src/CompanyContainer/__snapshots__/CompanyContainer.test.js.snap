@@ -8,6 +8,7 @@ exports[`CompanyContainer should match a snapshot 1`] = `
         "name": "space x",
       }
     }
+    key="space x"
   />
 </Fragment>
 `;

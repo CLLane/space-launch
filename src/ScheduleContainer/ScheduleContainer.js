@@ -3,7 +3,7 @@ import { Cards } from '../Cards/Cards';
 import { connect } from 'react-redux';
 
 export const ScheduleContainer = ({ monthLaunch }) => {
-  let calendar = monthLaunch.map(launch => <Cards launch={launch} />)
+  let calendar = monthLaunch.map(launch => <Cards launch={launch} key={launch.id}/>)
 
   return (
       <>

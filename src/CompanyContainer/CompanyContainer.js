@@ -16,7 +16,7 @@ async componentDidMount() {
 
 render() {
   let companies = this.props.companies.map(company => 
-  <CompanyCards company={company} />)
+  <CompanyCards company={company} key={company.name}/>)
   return (
     <>
       {companies}

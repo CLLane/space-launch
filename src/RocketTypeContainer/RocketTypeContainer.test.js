@@ -15,6 +15,7 @@ describe('RocketTypeContainer', () => {
         rocket={mockRocket}
         rocketTypeData={mockRocketTypeData}
         rockets={mockRockets}
+        key={1}
       />
     );
   });
