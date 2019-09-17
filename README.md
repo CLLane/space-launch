@@ -7,9 +7,7 @@ Launch Log, was built over the course of  six days utilizing an agile workflow, 
  - React
  - React Router
  - Redux
- - iTunes API
- - postgresSQL
- - Fetch (GET/POST/DELETE) local server network requests
+ - Launch Library API
  - PropTypes
  - CSS
 
