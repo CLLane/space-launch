@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CompanyContainer should match a snapshot 1`] = `
+<Fragment>
+  <CompanyCards
+    company={
+      Object {
+        "name": "space x",
+      }
+    }
+  />
+</Fragment>
+`;

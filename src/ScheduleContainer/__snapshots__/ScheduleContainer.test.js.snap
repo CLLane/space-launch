@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ScheduleContainer should match a snapshot 1`] = `
+<Fragment>
+  <Cards
+    launch={
+      Object {
+        "name": "Falcon",
+      }
+    }
+  />
+</Fragment>
+`;

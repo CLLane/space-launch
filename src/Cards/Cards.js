@@ -34,3 +34,5 @@ export const Cards = ({ launch }) => {
     </article>
     )
 }
+
+export default Cards;

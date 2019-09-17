@@ -5,7 +5,7 @@ import { RocketCards } from '../Cards/RocketCards';
 import { rocketTypeData } from "../actions/index";
 import { connect } from "react-redux";
 
-class RocketTypeContainer extends Component {
+export class RocketTypeContainer extends Component {
 
   async componentDidMount() {
     let rocketType = await getRocketTypes();
@@ -23,11 +23,11 @@ class RocketTypeContainer extends Component {
   }
 }
 
-const mapDispatchToProps = (dispatch) => ({
+export const mapDispatchToProps = (dispatch) => ({
   rocketTypeData: (rockets) => dispatch(rocketTypeData(rockets))
 })
 
-const mapStateToProps = ({ rockets }) => ({
+export const mapStateToProps = ({ rockets }) => ({
   rockets
 })
 

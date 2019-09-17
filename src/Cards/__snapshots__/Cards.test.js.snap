@@ -1,0 +1,210 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Cards should match snapshot 1`] = `
+<article>
+  <h1>
+    This 
+  </h1>
+  <h1>
+     is 
+  </h1>
+  <h1>
+     a Name
+  </h1>
+  <p>
+    this is a date
+  </p>
+  <div>
+    <div>
+      <h3>
+        Launch Pad:
+      </h3>
+      <p>
+        launch site
+      </p>
+      <div>
+        <div>
+          <h3>
+            Pad Company:
+          </h3>
+          <p>
+            stff
+          </p>
+          <h3>
+            Pad Country:
+          </h3>
+          <p>
+            GMT
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+`;
+
+exports[`CompanyCards Should match snapshot 1`] = `
+<article>
+  <h1>
+    A country
+  </h1>
+  <h3>
+    Countries:
+  </h3>
+  <div
+    className="country-container"
+  >
+    <div
+      className="abbrev"
+    >
+      <p>
+        a
+      </p>
+      <p>
+        b
+      </p>
+      <p>
+        c
+      </p>
+      <p>
+        d
+      </p>
+    </div>
+    <div
+      className="abbrev"
+    >
+      <p />
+      <p />
+      <p />
+      <p />
+    </div>
+    <div
+      className="abbrev"
+    >
+      <p />
+      <p />
+      <p />
+      <p />
+    </div>
+    <div
+      className="abbrev"
+    >
+      <p />
+      <p />
+      <p />
+      <p />
+    </div>
+  </div>
+  <h3>
+    Company:
+  </h3>
+  <p>
+    stff
+  </p>
+  <a
+    className="wiki-link"
+    href="this is a link"
+  >
+    Info
+  </a>
+  <a
+    className="info-link"
+    href="also a link"
+  >
+    Wiki
+  </a>
+</article>
+`;
+
+exports[`MissionCards should match snapshot 1`] = `
+<article>
+  <h1>
+    name
+  </h1>
+  <p>
+    some launch things
+  </p>
+  <a
+    className="info-link"
+    href="this is a link"
+  >
+    Info
+  </a>
+  <a
+    className="wiki-link"
+    href="also a link"
+  >
+    Wiki
+  </a>
+</article>
+`;
+
+exports[`RocketCards should match the snapshot 1`] = `
+<article>
+  <h1>
+    falcon
+  </h1>
+  <p>
+    Family:
+    birds
+  </p>
+  <a
+    className="wiki-link"
+    href="This is a link"
+  >
+    Wiki
+  </a>
+  <a
+    className="info-link"
+    href="Also a link"
+  >
+    Info
+  </a>
+  <img
+    alt="falcon"
+    className="rocket-images"
+    src="Image"
+  />
+</article>
+`;
+
+exports[`SearchCard should match the snapshot 1`] = `
+<article>
+  <h1>
+    Chris
+  </h1>
+  <p>
+    Config:
+    Hey
+  </p>
+  <a
+    className="wiki-link"
+    href="url"
+  >
+    Wiki
+  </a>
+  <a
+    className="info-link"
+    href="url"
+  >
+    Info
+  </a>
+  <img
+    alt=""
+    className="rocket-images"
+    src="url"
+  />
+  <p>
+    date
+  </p>
+  <p>
+    blew up
+  </p>
+  <p>
+    GMT
+  </p>
+  <p>
+    Snapshot Test
+  </p>
+</article>
+`;

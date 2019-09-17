@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Nav should match snapshot 1`] = `
+<Fragment>
+  <div
+    className="image-container"
+  >
+    <img
+      alt=""
+      className="logo"
+      src="logo.svg"
+    />
+    <p>
+      Launch Log
+    </p>
+  </div>
+  <form>
+    <div
+      className="radio-group"
+    >
+      <div
+        className="radio"
+      >
+        <input
+          name="condition"
+          onClick={[Function]}
+          type="radio"
+          value="launch/"
+        />
+        Launch
+      </div>
+      <div
+        className="radio"
+      >
+        <input
+          className="radio"
+          name="condition"
+          onClick={[Function]}
+          type="radio"
+          value="agency?name="
+        />
+        Company
+      </div>
+      <div
+        className="radio"
+      >
+        <input
+          className="radio"
+          name="condition"
+          onClick={[Function]}
+          type="radio"
+          value="rocket/"
+        />
+        Rocket
+      </div>
+      <div
+        className="radio"
+      >
+        <input
+          className="radio"
+          name="condition"
+          onClick={[Function]}
+          type="radio"
+          value="mission?name="
+        />
+        Missions
+      </div>
+    </div>
+    <div
+      className="search-container"
+    >
+      <input
+        onChange={[Function]}
+        type="text"
+        value=""
+      />
+      <button
+        disabled={true}
+      >
+        Search
+      </button>
+    </div>
+  </form>
+</Fragment>
+`;

@@ -2,7 +2,6 @@ import React from 'react';
 
 export const CompanyCards = ({ company }) => {
   let abbrev = company.countryCode.split(',')
-  console.log(abbrev)
   return (
     <article>
       <h1>{company.name}</h1>

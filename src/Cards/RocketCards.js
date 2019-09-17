@@ -1,7 +1,6 @@
 import React from 'react';
 
 export const RocketCards = ({ rocket }) => {
-  console.log(rocket)
   return (
     <article>
       <h1>{rocket.name}</h1>

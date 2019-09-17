@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RocketTypeContainer should match a snapshot 1`] = `
+<Fragment>
+  <RocketCards
+    rocket={
+      Object {
+        "name": "Falcon",
+      }
+    }
+  />
+</Fragment>
+`;
