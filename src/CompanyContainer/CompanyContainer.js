@@ -4,6 +4,7 @@ import { CompanyCards } from '../Cards/CompanyCards';
 import { getCompanies } from "../apiCalls/apiCalls";
 import { getCompanyData } from '../actions';
 import { connect } from 'react-redux';
+import PropTypes from "prop-types";
 
 export class CompanyContainer extends Component {
 
@@ -34,3 +35,8 @@ export const mapStateToProps = ({ companies }) => ({
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(CompanyContainer)
+
+CompanyContainer.propTypes = {
+  companies: PropTypes.array.isRequired,
+  getCompanyData: PropTypes.func.isRequired
+}

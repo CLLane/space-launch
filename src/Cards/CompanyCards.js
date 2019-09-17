@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from "prop-types";
 
 export const CompanyCards = ({ company }) => {
   let abbrev = company.countryCode.split(',')
@@ -38,4 +39,8 @@ export const CompanyCards = ({ company }) => {
       {company.wikiURL && <a className='info-link' href={company.wikiURL}>Wiki</a> || <p>Sorry No Wiki</p>}
     </article>
   )
+}
+
+CompanyCards.propTypes = {
+  company: PropTypes.object.isRequired
 }

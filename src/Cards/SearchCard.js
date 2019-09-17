@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactPlayer from "react-player";
+import PropTypes from "prop-types";
 
 export const SearchCard = ({ result }) => {
 
@@ -26,4 +27,8 @@ export const SearchCard = ({ result }) => {
       
     </article>
   )
+}
+
+SearchCard.propTypes = {
+  result: PropTypes.object.isRequired
 }

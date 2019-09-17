@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactPlayer from 'react-player';
+import PropTypes from "prop-types";
 
 export const Cards = ({ launch }) => {
  
@@ -36,3 +37,7 @@ export const Cards = ({ launch }) => {
 }
 
 export default Cards;
+
+Cards.propTypes = {
+  launch: PropTypes.object.isRequired
+}

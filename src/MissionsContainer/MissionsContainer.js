@@ -4,6 +4,7 @@ import { getMissions} from '../apiCalls/apiCalls';
 import { MissionCard } from '../Cards/MissionCards';
 import { connect } from 'react-redux';
 import { getMissionData } from '../actions';
+import PropTypes from "prop-types";
 
 export class MissionsContainer extends Component {
 
@@ -31,3 +32,8 @@ export const mapStateToProps = ({ missions }) => ({
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(MissionsContainer)
+
+MissionsContainer.propTypes = {
+  missions: PropTypes.array.isRequired,
+  getMissionData: PropTypes.func.isRequired
+}

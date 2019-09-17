@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from "prop-types";
 
 export const MissionCard = ({ mission }) => {
   return (
@@ -9,4 +10,8 @@ export const MissionCard = ({ mission }) => {
       <a className='wiki-link'href={mission.wikiURL}>Wiki</a>
     </article>
   )
+}
+
+MissionCard.propTypes = {
+  mission: PropTypes.object.isRequired
 }

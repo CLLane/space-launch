@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from "prop-types";
 
 export const RocketCards = ({ rocket }) => {
   return (
@@ -10,4 +11,8 @@ export const RocketCards = ({ rocket }) => {
       <img className='rocket-images' alt={rocket.name} src={rocket.imageURL}></img>
     </article>
   )
+}
+
+RocketCards.propTypes = {
+  rocket: PropTypes.object.isRequired
 }
