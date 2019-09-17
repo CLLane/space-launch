@@ -45,6 +45,6 @@ npm test
  - Christopher Lane [@CLLane](https://github.com/CLLane)
 
 ## Screenshots
-![](Images/Home.png)
-![](Images/launches.png)
-![](Images/rockets.png)
+![](src/Images/Home.png)
+![](src/Images/launches.png)
+![](src/Images/rockets.png)
