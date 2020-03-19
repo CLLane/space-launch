@@ -11,8 +11,6 @@ Launch Log, was built over the course of  six days utilizing an agile workflow, 
  - PropTypes
  - CSS
 
-## Set Up
-
 ### Clone and Install UI
 
 Clone down the UI repository.
